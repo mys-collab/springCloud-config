@@ -10,7 +10,7 @@ spring:
         #读取分支
       label: master #分支
       name: config #配置文件名称 自己的前缀
-      profile: dev #读取后缀名称 后缀
+      profile: test #读取后缀名称 后缀
       uri: http://127.0.0.1:3344 #配置中心地址
 
 eureka:
