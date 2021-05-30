@@ -1,0 +1,34 @@
+server:
+  port: 3344
+
+
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/mys-collab/springCloud-config.git
+          ###搜索的目录
+          search-paths:
+            - springCloud-config
+        #读取分支
+      label: master
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server1:7001/eureka/
+     # defaultZone: http://eureka-server1:7001/eureka/,http://eureka-server2:7002/eureka/
+  instance:
+    #给eureka里面的服务取名
+    instance-id: config3344
+    #显示ip
+    prefer-ip-address: true
+    #心跳检查 30秒默认
+    lease-renewal-interval-in-seconds: 1
+    #最后一次心跳后等待时间上线
+    lease-expiration-duration-in-seconds: 2
